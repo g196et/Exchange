@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = null;
+}
+<html>
+    <head>
+        <script type="text/jscript">
+            function CreateList() {
+                $.get("../Orders/FindOrder");
+                window.setTimeout(print, 1000)
+            }
+            function print ()
+            {
+                var jqxhr1 = $.get("../Orders/ListSeller");
+                jqxhr1.done(function (data) {
+                    $('.Sell').append(data)
+                });
+                var jqxhr2 = $.get("../Orders/ListCustomer");
+                jqxhr2.done(function (data) {
+                    $('.Buy').append(data)
+                });
+                var jqxhr3 = $.get("../Orders/ListOrder");
+                jqxhr3.done(function (data) {
+                    $('.Order').append(data)
+                });
+            }
+            function del() {
+                $.get("../Orders/RemoveAll");
+            }
+        </script>
+        <style type="text/css">
+            table.t1 {
+                display: inline;
+            }
+        </style>
+    </head>
+    <body onload="CreateList()">
+        <table cellpadding="10" border="0" class="t1">
+            <tr>
+                <td>
+                    @Html.Partial("../Orders/CreateSeller")
+                </td>
+            </tr>
+            <tr>
+                <td class="Sell">
+                    Ордера на продажу
+                </td>
+            </tr>
+        </table>
+        <table cellpadding="10" border="0" class="t1">
+            <tr>
+                <td>
+                    @Html.Partial("../Orders/CreateCustomer")
+                </td>
+            </tr>
+            <tr>
+                <td class="Buy">
+                    Ордера на покупку
+                </td>
+            </tr>
+        </table>
+        <table cellpadding="10" border="0">
+            <tr>
+                <td class="Order">
+                    Завершённые сделки
+                </td>
+            </tr>
+        </table>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @*@RenderSection("scripts", required: false)*@
+    </body>
+</html>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

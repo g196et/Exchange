@@ -1,0 +1,20 @@
+﻿@model List<WebApplication1.Models.Customer>
+<table border="1">
+    <tr>
+        <td>Цена</td>
+        <td>Кол-во</td>
+        <td>E-mail</td>
+    </tr>
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td> @item.price </td>
+                <td> @item.count </td>
+                <td> @item.email </td>
+            </tr>
+        }
+    }
+
+</table>

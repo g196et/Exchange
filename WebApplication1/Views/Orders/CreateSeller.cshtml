@@ -1,0 +1,13 @@
+﻿@model WebApplication1.Models.Seller
+
+@using (Html.BeginForm("CreateSeller", "Orders"))
+{
+    @Html.AntiForgeryToken()
+    <h4>Продать</h4>
+    <hr>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <p>@Html.TextBoxFor(x => x.price, new { htmlAttributes = new { @value = "1" } })</p>
+    <p>@Html.TextBoxFor(x => x.count, htmlAttributes: new { @value = "1" })</p>
+    <p>@Html.TextBoxFor(x => x.email, new { @value = "qwe" })</p>
+        <input type="submit" value="OK">
+}

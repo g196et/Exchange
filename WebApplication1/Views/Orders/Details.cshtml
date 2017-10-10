@@ -1,0 +1,74 @@
+﻿@model WebApplication1.Models.Order
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.dateOfComplete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateOfComplete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateOfBuy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateOfBuy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateOfSell)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateOfSell)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.count)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.count)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emailCustomer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emailCustomer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emailSeller)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emailSeller)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

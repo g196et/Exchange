@@ -1,0 +1,69 @@
+﻿@model IEnumerable<WebApplication1.Models.Order>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.dateOfComplete)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateOfBuy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateOfSell)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.count)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emailCustomer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emailSeller)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateOfComplete)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateOfBuy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateOfSell)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.count)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emailCustomer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emailSeller)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,28 @@
+﻿@model List<WebApplication1.Models.Order>
+<table border="1">
+    <tr>
+        <td>Выполнено</td>
+        <td>Дата К</td>
+        <td>Дата П</td>
+        <td>Цена</td>
+        <td>Кол-во</td>
+        <td>E-mail К</td>
+        <td>E-mail П</td>
+    </tr>
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td> @item.dateComplete </td>
+                <td> @item.dateCustomer </td>
+                <td> @item.dateSeller </td>
+                <td> @item.price </td>
+                <td> @item.count </td>
+                <td> @item.EmailCustomer </td>
+                <td> @item.EmailSeller </td>
+            </tr>
+        }
+    }
+
+</table>
